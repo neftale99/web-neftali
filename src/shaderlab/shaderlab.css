@@ -1,0 +1,299 @@
+* 
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.no-scroll {
+    overflow: hidden;
+    height: 100vh;
+}
+
+.webgl 
+{
+    position: absolute;
+    top: 0;
+    left: 0;
+    outline: none;
+    z-index: 12;
+}
+
+.loading-bar {
+    position: fixed;
+    top: 50%;
+    width: 100%;
+    height: 2px;
+    background: #ffffff;
+    transform: scaleX(0.3);
+    transform-origin: top left;
+    transition: transform 0.5s;
+    z-index: 12;
+}
+
+.loading-bar.ended {
+    transform: scaleX(0);
+    transform-origin: 100% 0;
+    transition: transform 1.5s ease-in-out;
+    opacity: 0;
+    visibility: hidden;
+}
+
+@font-face
+{
+    font-family: 'name-font'; 
+    src: url('../font/playfair-display-sc-v17-latin-regular.woff') 
+    format('woff');
+    font-weight: normal;
+    font-style: normal;
+ }
+
+ @font-face
+{
+    font-family: 'font'; 
+    src: url('../font/raleway-v34-latin-regular.woff') 
+    format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+html 
+{
+    overflow-y: scroll;
+    height: 100%;
+    -webkit-overflow-scrolling: touch;  
+    scroll-behavior: smooth;
+    background-color: antiquewhite;
+}
+
+body 
+{
+    overflow-y: visible;
+    position: relative;
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+    background-color: rgb(0, 0, 0);
+}
+
+/* Navbar */
+.navbar {
+    position: static; 
+    width: fit-content; 
+    font-family: 'font', sans-serif;
+    background-color: #000000; 
+    color: #ffffff;
+    padding: 0.5em 1em; 
+    border-left: 3px solid #ffffff; 
+    border-right: 3px solid #ffffff; 
+    border-bottom: 3px solid white;
+    margin: 0 20px; 
+    transition: background-color 0.3s; 
+}
+
+.navbar:hover {
+    background-color: #ffffff;
+    color: #000000; 
+}
+
+.navbar-content {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+}
+
+.navbar ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar li {
+    margin: 0 1em;
+}
+
+.navbar a {
+    color: inherit; 
+    text-decoration: none;
+    font-size: 1.2em;
+    position: relative;
+    padding: 0.4em;
+    transition: color 0.3s;
+}
+
+.navbar a:hover {
+    color: inherit; 
+}
+
+.container, .firstContainer, .lastContainer, .navbar {
+    opacity: 0;
+    visibility: hidden;
+}
+
+.container 
+{
+    width: 400%; 
+    height: 100vh;
+    display: flex;
+    flex-wrap: nowrap;
+    -webkit-overflow-scrolling: touch;
+}
+
+.firstContainer 
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: rgb(0, 0, 0);
+}
+
+.firstContainer h1
+{
+    font-family: 'name-font'; 
+    font-size: 5rem;
+    text-align: center;
+    color: rgb(255, 255, 255);
+    z-index: 11;
+}
+
+.firstContainer p
+{
+    font-family: 'name'; 
+    font-size: 2rem;
+    text-align: center;
+    color: rgb(255, 255, 255);
+    padding: 1rem;
+    z-index: 11;
+}
+
+.panel 
+{
+    width: 100vw; /* Make each panel full width */
+    height: 100vh; /* Ensure each panel covers the full height */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 4rem;
+    background-color: antiquewhite;
+}
+
+.panel-content 
+{
+    display: flex;
+    width: 100%;
+    height: 100%;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    z-index: 10;
+}
+
+.panel-content a {
+    display: block; /* Asegura que el enlace ocupe el espacio completo */
+    width: 23%; /* Ajusta el ancho según tu diseño */
+    height: 70vh; /* Mantiene la altura deseada */
+    overflow: hidden; /* Asegúrate de que nada se desborde */
+}
+
+.panel-content img {
+    width: 100%; /* Asegura que la imagen ocupe todo el ancho del enlace */
+    height: 100%; /* Asegura que la imagen ocupe toda la altura del enlace */
+    border-radius: 40px;
+    transition: 0.5s ease;
+    object-fit: cover; /* Ajusta la imagen para que cubra el área sin distorsionarse */
+}
+
+.panel-content img:hover 
+{
+    cursor: grab;
+    transform: scale(0.99);
+    border-radius: 50%;
+}
+
+.lastContainer 
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+    background: rgb(0, 0, 0);
+}
+
+.lastContainer h1
+{
+    font-family: 'name-font'; 
+    font-size: 4rem;
+    text-align: center;
+    color: rgb(255, 255, 255);
+    padding: 2rem;
+}
+
+.lastContainer p
+{
+    font-family: 'font';
+    font-size: 1.5em;
+    text-align: center;
+    color: rgb(255, 255, 255);
+    padding: 1rem;
+}
+
+.hidden {
+    display: none;
+}
+
+@media (max-width: 600px) {
+    .panel-content {
+        align-items: center;
+    }
+    
+    .panel-content a {
+        width: 24%; 
+        height: 80vh;
+    }
+    
+    .panel-content img {
+        margin: 2px;
+    }
+
+    .lastContainer h1 {
+        font-size: 2.5rem;
+        padding: 1.2rem;
+    }
+
+    .lastContainer p {
+        font-size: 1.1rem;
+        padding: 0.5rem;
+    }
+}
+
+@media (max-width: 400px) {
+    .panel-content {
+        flex-direction: column;
+    }
+
+    .panel-content a {
+        width: 90%; 
+    }
+    
+    .panel-content img {
+        margin: 2px;
+    }
+
+    .lastContainer {
+        height: 100vh;
+    }
+
+    .lastContainer h1 {
+        font-size: 2.1rem;
+        padding: 1.2rem;
+    }
+
+    .lastContainer p {
+        font-size: 1.4rem;
+        padding: 0.5rem;
+    }
+}

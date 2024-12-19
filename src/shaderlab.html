@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shader Lab</title>
+    <link rel="stylesheet" href="./shaderlab/shaderlab.css">
+</head>
+<body>
+    <canvas class="webgl"></canvas>
+    <div class="loading-bar"></div>
+    <nav class="navbar"> 
+        <div class="navbar-content">
+            <ul>
+                <li><a href="./index.html">HOME</a></li>
+            </ul>
+        </div>
+    </nav>
+    <div class="firstContainer ">
+        <h1>SHADER LAB</h1>
+        <p>Bringing pixels to life, one shader at a time</p>
+    </div>
+    <div class="container">
+        <section class="panel">
+            <div class="panel-content">
+                <a href="https://patterns.neftali-alejandro.com/" target="_blank">
+                    <img src="./shaders/shader1.webp" alt="Shader1">
+                </a>
+                <a href="https://galaxy.neftali-alejandro.com/" target="_blank">
+                    <img src="./shaders/shader2.webp" alt="Shader2">
+                </a>
+                <a href="https://coffeesmoke.neftali-alejandro.com/" target="_blank">
+                    <img src="./shaders/shader3.webp" alt="Shader3">
+                </a>  
+                <a href="https://hologram.neftali-alejandro.com/" target="_blank">
+                    <img src="./shaders/shader4.webp" alt="Shader4">
+                </a>   
+            </div>
+        </section>
+        <section class="panel">
+            <div class="panel-content">
+                <a href="https://fireworks.neftali-alejandro.com/" target="_blank">
+                    <img src="./shaders/shader5.webp" alt="Shader5">
+                </a>
+                <a href="https://light.neftali-alejandro.com/" target="_blank">
+                    <img src="./shaders/shader6.webp" alt="Shader6">
+                </a>
+                <a href="https://sea.neftali-alejandro.com/" target="_blank">
+                    <img src="./shaders/shader7.webp" alt="Shader7">
+                </a>
+                <a href="https://halftone.neftali-alejandro.com/" target="_blank">
+                    <img src="./shaders/shader8.webp" alt="Shader8`">
+                </a>
+            </div>
+        </section>
+        <section class="panel">
+            <div class="panel-content">
+                <a href="https://earth.neftali-alejandro.com/" target="_blank">
+                    <img src="./shaders/shader9.webp" alt="Shader9">
+                </a>
+                <a href="https://particlescursor.neftali-alejandro.com/" target="_blank">
+                    <img src="./shaders/shader10.webp" alt="Shader10">
+                </a>
+                <a href="https://partilcesmorphing.neftali-alejandro.com/" target="_blank">
+                    <img src="./shaders/shader11.webp" alt="Shader11">
+                </a>
+                <a href="https://flowfieldparticles.neftali-alejandro.com/" target="_blank">
+                    <img src="./shaders/shader12.webp" alt="Shader12">
+                </a>
+            </div>
+        </section>
+        <section class="panel">
+            <div class="panel-content">
+                <a href="https://wobbly.neftali-alejandro.com/" target="_blank">
+                    <img src="./shaders/shader13.webp" alt="Shader13">
+                </a>
+                <a href="https://robot.neftali-alejandro.com/" target="_blank">
+                    <img src="./shaders/shader14.webp" alt="Shader14">
+                </a>
+                <a href="https://terrain.neftali-alejandro.com/" target="_blank">
+                    <img src="./shaders/shader15.webp" alt="Shader15">
+                </a>
+                <a href="https://portalrm.neftali-alejandro.com/" target="_blank">
+                    <img src="./shaders/shader16.webp" alt="Shader16">
+                </a>
+            </div>
+        </section>
+    </div>
+    <div class="lastContainer">
+        <h1>WHAT IS A SHADER?</h1>
+        <p> A shader is a program written in GLSL that is sent to the GPU.  It processes how 3D graphics are rendered by handling the positions of a model's vertices and determining how the final image looks on the screen.</p>
+
+        <p>There are two main types of shaders: vertex shaders and fragment shaders. The vertex shader determines where each vertex should be positioned on the screen, handling transformations like rotation and scaling. The fragment shader decides the color and appearance of each fragment (a more accurate term than "pixel") of the model, adding effects like textures, lighting, and transparency.</p>
+    </div>
+    <script type="module" src="./shaderlab/shaderlab.js"></script>
+</body>
+</html>
