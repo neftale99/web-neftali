@@ -43,23 +43,22 @@ export default class Site {
         this.horizontalMove()
     }
 
-    horizontalMove()
+    horizontalMove() 
     {
         gsap.registerPlugin(ScrollTrigger)
-
+    
         let sections = gsap.utils.toArray(".panel")
-
-        gsap.to(sections, 
-        {
+        const isTouchDevice = window.matchMedia("(max-width: 768px)").matches
+    
+        gsap.to(sections, {
             xPercent: -100 * (sections.length - 1),
             ease: "none",
-            scrollTrigger: 
-            {
+            scrollTrigger: {
                 trigger: ".container",
                 pin: true,
                 scrub: 0.5,
                 snap: 1 / (sections.length - 1),
-                end: () => "+=" + document.querySelector(".container").offsetWidth * 0.5,
+                end: isTouchDevice ? "+=100%" : () => "+=" + document.querySelector(".container").offsetWidth * 0.5,
                 pinSpacing: true
             }
         })
